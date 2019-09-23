@@ -1,0 +1,35 @@
+{
+  "name": "freetoplay.ir clone mirror",
+  "description": "A Clone Build Of freetoplay.ir",
+  "keywords": [
+    "productivity",
+    "HTML5",
+    "scalpel"
+  ],
+  "website": "http://freetoplay.ir/",
+  "repository": "https://github.com/freetoplayir/stream",
+  "logo": "https://freetoplayir.github.io/stream/logo.png",
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "WEB_CONCURRENCY": {
+      "description": "The number of processes to run.",
+      "value": "5"
+    }
+  },
+  "image": "heroku/php",
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-php"
+    }
+  ],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "bundle exec rake test"
+      }
+    }
+  }
+}
